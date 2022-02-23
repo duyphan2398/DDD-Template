@@ -2,7 +2,8 @@
 
 namespace App\Domain\Posts\Controllers;
 
-class PostController
-{
+use App\Http\Controllers\Controller;
 
+class PostController extends Controller
+{
 }

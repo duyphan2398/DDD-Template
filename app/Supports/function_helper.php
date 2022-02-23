@@ -1,5 +1,6 @@
 <?php
-if (!function_exists('glob_recursive')) {
+
+if (! function_exists('glob_recursive')) {
     // Does not support flag GLOB_BRACE
     function glob_recursive($pattern, $flags = 0)
     {
@@ -7,11 +8,12 @@ if (!function_exists('glob_recursive')) {
         foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR | GLOB_NOSORT) as $dir) {
             $files = array_merge($files, glob_recursive($dir.'/'.basename($pattern), $flags));
         }
+
         return $files;
     }
 }
 
-if (!function_exists('require_all')) {
+if (! function_exists('require_all')) {
     function require_all($pattern)
     {
         foreach (glob_recursive($pattern) as $task) {
