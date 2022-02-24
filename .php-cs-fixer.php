@@ -5,7 +5,10 @@ use PhpCsFixer\Finder;
 
 $rules = [
     'array_syntax' => ['syntax' => 'short'],
-
+    'array_indentation' => true,
+    'align_multiline_comment' => [
+        'comment_type' => 'phpdocs_like'
+    ],
     'no_unused_imports' => true,
     'blank_line_after_namespace' => true,
     'blank_line_after_opening_tag' => true,
@@ -39,8 +42,7 @@ $rules = [
         'tokens' => [
             'extra',
             'throw',
-            'use',
-            'use_trait',
+            'use'
         ],
     ],
     'no_blank_lines_after_class_opening' => true,
@@ -109,7 +111,7 @@ $rules = [
     'phpdoc_inline_tag_normalizer' => true,
     'phpdoc_tag_type' => true,
     'psr_autoloading' => true,
-    'trailing_comma_in_multiline' => ['elements' => ['arrays']],
+    'trailing_comma_in_multiline' => false,
 
     // php-cs-fixer 3: Changed options
     'binary_operator_spaces' => [
@@ -124,6 +126,7 @@ $rules = [
             'const' => 'one',
             'method' => 'one',
             'property' => 'one',
+            'trait_import' => 'one'
         ],
     ],
     'class_definition' => [
@@ -150,12 +153,12 @@ $rules = [
 
 $finder = Finder::create()
     ->in([
-        __DIR__.'/app',
-        __DIR__.'/config',
-        __DIR__.'/database',
-        __DIR__.'/resources',
-        __DIR__.'/routes',
-        __DIR__.'/tests',
+        __DIR__ . '/app',
+        __DIR__ . '/config',
+        __DIR__ . '/database',
+        __DIR__ . '/resources',
+        __DIR__ . '/routes',
+        __DIR__ . '/tests',
     ])
     ->name('*.php')
     ->notName('*.blade.php')
@@ -166,4 +169,4 @@ return (new Config())
     ->setFinder($finder)
     ->setRules($rules)
     ->setRiskyAllowed(true)
-    ->setUsingCache(true);
+    ->setUsingCache(false);
