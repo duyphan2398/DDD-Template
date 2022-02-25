@@ -7,13 +7,9 @@ use Illuminate\Http\Request;
 
 class FixerMiddleware
 {
-    protected $a;
+   protected $a;
+   protected $b;
 
-    protected $b;
-
-    protected $c;
-
-    protected $d;
 
     public function handle(Request $request, Closure $next)
     {
