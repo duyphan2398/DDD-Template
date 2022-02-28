@@ -2,7 +2,6 @@
 
 namespace App\Domain\Posts\DataTransferObject;
 
-
 use Spatie\LaravelData\Data;
 
 class PostData extends Data

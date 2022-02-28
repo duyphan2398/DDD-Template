@@ -8,5 +8,6 @@ use Spatie\LaravelData\WithData;
 class Post extends Model
 {
     use WithData;
+
     protected $dataClass = PostData::class;
 }

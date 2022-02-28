@@ -19,8 +19,8 @@ fi
 
 for FILE in $STAGED_FILES
 do
-  ./vendor/bin/php-cs-fixer fix --dry-run "$FILE"
-
+  ./vendor/bin/php-cs-fixer fix -vvv --dry-run "$FILE"
+   echo "$?"
   if [[ "$?" == 0 ]]; then
     echo "\t\033[32m PHP-CS-FIXER Passed: $FILE\033[0m"
   else
@@ -33,7 +33,8 @@ echo "\nPHPCS validation completed!\n"
 
 if ! $PASS; then
   echo "\033[41mCOMMIT FAILED:\033[0m Your commit contains files that should pass PHPCS but do not. Please fix the PHP-CS-FIXER errors and try again.\n"
-  echo "\t\033[41m Run: composer lint \n"
+  echo "\t\033[41m Run to fix : composer lint \033[0m\n"
+  echo "\t\033[41m Run to read errors : composer sniff \033[0m\n"
   exit 1
 else
   echo "\033[42mCOMMIT SUCCEEDED\033[0m\n"
