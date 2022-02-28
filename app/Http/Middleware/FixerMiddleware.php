@@ -10,6 +10,7 @@ class FixerMiddleware
     protected $a;
     protected $b;
     protected $c;
+
     protected $d;
 
 
