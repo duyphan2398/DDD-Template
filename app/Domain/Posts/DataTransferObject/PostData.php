@@ -8,7 +8,6 @@ class PostData extends Data
 {
     public function __construct(
         public string $title,
-
         public string $artist,
     ) {
     }
