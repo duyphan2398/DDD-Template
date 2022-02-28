@@ -11,7 +11,7 @@ class FixerMiddleware
     protected $b;
 
     protected $c;
-    
+
     protected $d;
 
 
